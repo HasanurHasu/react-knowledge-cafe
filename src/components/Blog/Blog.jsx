@@ -25,7 +25,7 @@ const Blog = ({ blog, handleAddToBookmarks, handleReadingTime }) => {
             <button
                 onClick={() => handleReadingTime(reading_time)}
                 className='block mt-2 text-[#6047EC] text-lg underline'
-                >Mark as read</button>
+            >Mark as read</button>
         </div>
     );
 };

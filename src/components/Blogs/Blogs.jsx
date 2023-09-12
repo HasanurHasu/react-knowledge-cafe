@@ -34,7 +34,7 @@ const Blogs = () => {
                         ></Blog>)
                     }
                 </div>
-                <div className="border rounded-lg">
+                <div className="rounded-lg">
                     <Bookmarks
                         bookmark={bookmark}
                         readingTime={readingTime}
