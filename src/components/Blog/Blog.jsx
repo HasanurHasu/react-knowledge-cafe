@@ -1,6 +1,6 @@
 import { BsBookmarkPlus } from 'react-icons/Bs';
 
-const Blog = ({ blog,  handleAddToBookmarks }) => {
+const Blog = ({ blog, handleAddToBookmarks, handleReadingTime }) => {
     const { cover, title, author_img, author, posted_date, reading_time, hashtags } = blog;
     return (
         <div>
@@ -22,7 +22,10 @@ const Blog = ({ blog,  handleAddToBookmarks }) => {
             {
                 hashtags.map((hash, idx) => <a href="" key={idx} className='text-[#11111199] text-lg'> #{hash}</a>)
             }
-            <a href="" className='block mt-2 text-[#6047EC] text-lg'>Mark as read</a>
+            <button
+                onClick={() => handleReadingTime(reading_time)}
+                className='block mt-2 text-[#6047EC] text-lg underline'
+                >Mark as read</button>
         </div>
     );
 };

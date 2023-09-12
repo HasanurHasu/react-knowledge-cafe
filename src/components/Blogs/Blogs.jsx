@@ -6,11 +6,14 @@ import Blog from "../Blog/Blog";
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [bookmark, setBookmarks] = useState([]);
+    const [readingTime, setReadingTime] = useState(0);
 
     const handleAddToBookmarks = blog => {
-        console.log(blog);
         const newBookmarks = [...bookmark, blog];
         setBookmarks(newBookmarks);
+    }
+    const handleReadingTime = time => {
+        setReadingTime(readingTime + time);
     }
 
     useEffect(() => {
@@ -27,11 +30,15 @@ const Blogs = () => {
                         blogs.map(blog => <Blog key={blog.id}
                             blog={blog}
                             handleAddToBookmarks={handleAddToBookmarks}
+                            handleReadingTime={handleReadingTime}
                         ></Blog>)
                     }
                 </div>
                 <div className="border rounded-lg">
-                    <Bookmarks bookmark={bookmark}></Bookmarks>
+                    <Bookmarks
+                        bookmark={bookmark}
+                        readingTime={readingTime}
+                    ></Bookmarks>
                 </div>
             </div>
         </main>
