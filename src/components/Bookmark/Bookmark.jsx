@@ -1,5 +1,6 @@
-
+import PropTypes from 'prop-types';
 const Bookmark = ({ bMark}) => {
+    console.log(typeof bMark);
     const {title} = bMark;
     return (
         <div className="bg-white my-5 mx-5 rounded-lg">
@@ -7,5 +8,7 @@ const Bookmark = ({ bMark}) => {
         </div>
     );
 };
-
+Bookmark.propTypes = {
+    bMark: PropTypes.object
+}
 export default Bookmark;

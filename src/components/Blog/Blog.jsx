@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { BsBookmarkPlus } from 'react-icons/Bs';
 
 const Blog = ({ blog, handleAddToBookmarks, handleReadingTime }) => {
@@ -29,5 +30,11 @@ const Blog = ({ blog, handleAddToBookmarks, handleReadingTime }) => {
         </div>
     );
 };
+
+Blog.propTypes = {
+    blog: PropTypes.object.isRequired,
+    handleAddToBookmarks: PropTypes.func,
+    handleReadingTime: PropTypes.func
+}
 
 export default Blog;
